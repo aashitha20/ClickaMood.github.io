@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Changer 🌈</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.8s ease, color 0.8s ease;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .emoji {
+      font-size: 4rem;
+      margin-bottom: 0.5rem;
+      transition: transform 0.4s ease;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.3rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: 0.85;
+      margin: 0;
+      text-align: center;
+    }
+
+    select {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      border: none;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(5px);
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .credits {
+      position: absolute;
+      bottom: 12px;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <select id="themeSelect">
+    <option value="candy">🍬 Candy</option>
+    <option value="drink">☕ Drink</option>
+    <option value="pokemon">⚡ Pokémon</option>
+  </select>
+
+  <div class="emoji">🍬</div>
+  <h1 id="moodName">Cotton Candy Vibes</h1>
+  <p id="moodQuote">Soft, sweet, and full of dreams ☁️</p>
+
+  <div class="credits">Click anywhere to change your mood 🌸</div>
+
+  <script>
+    const themes = {
+      candy: [
+        { name: "Cotton Candy", color: "#FAD0E6", text: "#4E3B47", emoji: "🍬", quote: "Soft, sweet, and full of dreams ☁️" },
+        { name: "Lollipop", color: "#FF8FAB", text: "#fff8f8", emoji: "🍭", quote: "Stay twirly and bright 🍭" },
+        { name: "Gummy Bears", color: "#FFD166", text: "#4B2900", emoji: "🧸", quote: "Tiny but full of joy 💛" },
+        { name: "Peppermint", color: "#E4F9F5", text: "#065446", emoji: "🍥", quote: "Fresh starts. Minty hearts 🌿" },
+        { name: "Chocolate Bar", color: "#7B3F00", text: "#FFEBD4", emoji: "🍫", quote: "Sweet comfort, no reason needed 🍫" },
+        { name: "Jelly Beans", color: "#FFB5E8", text: "#3B2E3E", emoji: "🌈", quote: "Life’s better in colors 🌈" },
+        { name: "Candy Cane", color: "#FFCAD4", text: "#9A1E2A", emoji: "❤️", quote: "Be sweet. Stay festive 🎀" },
+        { name: "Marshmallow", color: "#FFF4E0", text: "#6E4B3A", emoji: "☁️", quote: "Soft hearts. Warm hugs ☕" }
+      ],
+
+      drink: [
+        { name: "Iced Coffee", color: "#b08968", text: "#fff", emoji: "🥤", quote: "Cool, calm, and caffeine-fueled ☕" },
+        { name: "Matcha Latte", color: "#a8c686", text: "#2e382e", emoji: "🍵", quote: "Serenity in every sip 🌿" },
+        { name: "Bubble Tea", color: "#e4b1ab", text: "#3b2c35", emoji: "🧋", quote: "Stay sweet, stay bubbly 🧋" },
+        { name: "Lemonade", color: "#fff176", text: "#333", emoji: "🍋", quote: "When life gives you lemons... click again 🍋" },
+        { name: "Strawberry Milk", color: "#ffb6c1", text: "#4b2a3e", emoji: "🥛", quote: "Soft, pink, and purely adorable 💗" },
+        { name: "Espresso Shot", color: "#3e2723", text: "#fff", emoji: "☕", quote: "Bold. No filters. Just vibes ☕" }
+      ],
+
+      pokemon: [
+        { name: "Pikachu", color: "#FFEE58", text: "#2E2E2E", emoji: "⚡", quote: "Stay bright. Stay electric ⚡" },
+        { name: "Squirtle", color: "#9DD9F3", text: "#033E5F", emoji: "🐢", quote: "Stay chill and go with the flow 💧" },
+        { name: "Charmander", color: "#FF7A3D", text: "#fff8f0", emoji: "🔥", quote: "Keep your fire alive 🔥" },
+        { name: "Bulbasaur", color: "#A8E6A1", text: "#2D4739", emoji: "🌿", quote: "Grow through what you go through 🌱" },
+        { name: "Jigglypuff", color: "#F8C8DC", text: "#47334A", emoji: "🎵", quote: "Sing your heart out 🎶" },
+        { name: "Eevee", color: "#C7A27C", text: "#3B2E2A", emoji: "🦊", quote: "Evolve in your own way 🌸" },
+        { name: "Snorlax", color: "#A8C3B0", text: "#213E33", emoji: "😴", quote: "Rest. Recharge. Repeat 💤" },
+        { name: "Mew", color: "#F7D4E4", text: "#52344B", emoji: "🌸", quote: "Soft power. Big magic ✨" }
+      ]
+    };
+
+    let currentTheme = "candy";
+
+    const emoji = document.querySelector(".emoji");
+    const moodName = document.getElementById("moodName");
+    const moodQuote = document.getElementById("moodQuote");
+    const themeSelect = document.getElementById("themeSelect");
+
+    document.body.addEventListener("click", () => {
+      const randomMood = themes[currentTheme][Math.floor(Math.random() * themes[currentTheme].length)];
+
+      document.body.style.backgroundColor = randomMood.color;
+      document.body.style.color = randomMood.text;
+      emoji.textContent = randomMood.emoji;
+      moodName.textContent = randomMood.name + " Vibes";
+      moodQuote.textContent = randomMood.quote;
+
+      // cute pop animation
+      emoji.style.transform = "scale(1.2)";
+      setTimeout(() => emoji.style.transform = "scale(1)", 300);
+    });
+
+    themeSelect.addEventListener("change", (e) => {
+      currentTheme = e.target.value;
+      document.body.click(); // instantly show a random mood
+    });
+  </script>
+</body>
+</html>
