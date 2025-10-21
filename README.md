@@ -5,8 +5,7 @@
 ClickaMood is a super cute, minimal, Gen Z–style webpage that changes its *vibe* every time you click — featuring **Candy 🍬**, **Drink ☕**, and **Pokémon ⚡** themes.  
 Each click brings a new color palette, emoji, and mood quote that brightens your day!
 
----
-## 🌐 **Live Demo:** [https://aashitha20.github.io/ClickaMood.github.io/](https://aashitha20.github.io/ClickaMood.github.io/)
+> 🌐 **Live Demo:** [https://aashitha20.github.io/ClickaMood.github.io/](https://aashitha20.github.io/ClickaMood.github.io/)
 
 ---
 
@@ -26,7 +25,7 @@ Each click brings a new color palette, emoji, and mood quote that brightens your
 > 🌐 *Open the page and click anywhere — watch the background and mood change instantly!*  
 >[https://aashitha20.github.io/ClickaMood.github.io/](https://aashitha20.github.io/ClickaMood.github.io/)
 
-<img width="1913" height="1019" alt="Screenshot 2025-10-13 134535" src="https://github.com/user-attachments/assets/83c8b09f-865e-4fde-976f-6499a4abd182" />
+<img width="1918" height="1015" alt="Screenshot 2025-10-21 125453" src="https://github.com/user-attachments/assets/96ed587e-6cc9-4027-877e-6efb8d0dd4cd" />
 
 ---
 
