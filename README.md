@@ -6,6 +6,9 @@ ClickaMood is a super cute, minimal, Gen Z–style webpage that changes its *vib
 Each click brings a new color palette, emoji, and mood quote that brightens your day!
 
 ---
+## 🌐 **Live Demo:** [https://aashitha20.github.io/ClickaMood.github.io/](https://aashitha20.github.io/ClickaMood.github.io/)
+
+---
 
 ## 🌸 Features
 
@@ -21,6 +24,7 @@ Each click brings a new color palette, emoji, and mood quote that brightens your
 ## 🧁 Demo Preview
 
 > 🌐 *Open the page and click anywhere — watch the background and mood change instantly!*  
+>[https://aashitha20.github.io/ClickaMood.github.io/](https://aashitha20.github.io/ClickaMood.github.io/)
 
 <img width="1913" height="1019" alt="Screenshot 2025-10-13 134535" src="https://github.com/user-attachments/assets/83c8b09f-865e-4fde-976f-6499a4abd182" />
 
